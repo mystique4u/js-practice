@@ -60,3 +60,25 @@ let authors = [
         imageURL: 'img/tile_simon_libsig.jpg'
     }
 ];
+
+// build html structure li grid
+function authorsList(){
+    const ulTag = document.querySelector("main ul");
+    for (let author of authors) {
+    let aTag = document.createElement('a');
+    let liTag = document.createElement('li');
+    let imgTag = document.createElement('img');
+    imgTag.src = author.imageURL;
+
+    let h2Tag = document.createElement('h2');
+    h2Tag.textContent = `${author.firstName} ${author.lastName}`;
+
+    aTag.appendChild(imgTag);
+    aTag.appendChild(h2Tag);
+    liTag.appendChild(aTag);
+    ulTag.appendChild(liTag);
+    } 
+}
+authorsList();
+
+
